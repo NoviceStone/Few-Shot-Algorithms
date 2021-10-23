@@ -1,0 +1,33 @@
+device_ids: 0 # determine GPU ids in bus order
+n_gpu: 1 # select the number of gpus to use
+seed: 0 # random seed for numpy, torch and cuda
+deterministic: True # option for torch.backends.cudnn.benchmark  and torch.backends.cudnn.deterministic
+
+type: meTric
+dataset: MSAR
+data_root: F:/Python/SAR-FSL/SARSHOT/datasets/MSTAR
+method: relation  # few-shot algorithm
+model: Conv4  # Conv{4|6} / ResNet {10|18|34|50|101}
+is_mse: True
+image_size: 84
+batch_size: 1
+train_way: 3
+test_way: 3
+train_episode: 10000
+test_episode: 1000
+train_shot: 5
+train_query: 15
+test_shot: 5
+test_query: 15
+num_class: 200  # total number of classes in softmax, only used in baseline
+save_freq: 5
+print_freq: 1000
+start_epoch: 0
+stop_epoch: 30
+resume: False
+resume_path: None
+save_path: F:/Python/SAR-FSL/SARSHOT/saved_models
+optimization: Adam  # with default params in optimizer
+depression_angle: 17
+
+adaptation: None  # api will be released later
